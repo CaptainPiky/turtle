@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col s12 m12" style="margin-top: 30px">
+		<table class="striped">
+				<thead>
+					<td><strong># </strong></td>
+					<td><strong>First Name </strong></td>
+					<td> <strong>Last Name </strong></td>
+					<td> <strong>Sexe </strong></td>
+					<td> <strong>Age </strong></td>
+					<td>
+						<%= link_to '/users/new', class: 'btn-floating btn-large waves-effect waves-light red' do %>
+						  <i class="material-icons">add</i>
+						<% end %>
+					</td>
+				</thead>
+				<tbody>
+					<% @users.each do |u| %>
+					<tr>
+						<td><%= u.id %></td>
+	  					<td><%= u.first_name %></td>
+	  					<td><%= u.last_name %></td>
+	  					<td><%= u.sexe.title if u.sexe %></td>
+	  					<td><%= u.age%> ans</td>
+	  					<td><%= link_to "Learne more", user_path(u) %></td>
+					</tr>
+					<% end %>
+				</tbody>
+		</table>
+	</div>
+</div>

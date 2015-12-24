@@ -1,0 +1,22 @@
+
+<div class="row card-panel" style="margin-top: 40px">
+	<div class="col s4 m6">
+		<%= image_tag @user.image, :class => "circle responsive-img"%>
+	</div>
+	<div class="col s4 m6">
+		<p class="flow-text"><%= @user.first_name %> <%= @user.last_name %></p>
+		<p class="flow-text"> <%= @user.sexe.title if @user.sexe %> </p>
+		<p class="flow-text"> <%= @user.age %> ans</p>
+	</div>
+	<div class="col s4 m6">
+		<%= link_to '/users', class: 'btn-floating btn-large waves-effect waves-light red' do %>
+			<i class="material-icons">face</i>
+		<% end %>
+		<%= link_to edit_path(@user), class: 'btn-floating btn-large waves-effect waves-light red' do %>
+			<i class="material-icons">mode_edit</i>
+		<% end %>
+		<%= link_to delete_path(@user), method: 'delete', class: 'btn-floating btn-large waves-effect waves-light red' do %>
+			<i class="material-icons">delete</i>
+		<% end %>
+	</div>
+</div>

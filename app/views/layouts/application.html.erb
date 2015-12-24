@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <title>Turtle</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar-fixed">
+	<nav role="navigation">
+		<div class="nav-wrapper container">
+			<%= link_to "Hello Mongo", "/", { :class=>"brand-logo" } %>
+			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li class="<%= active_class('/') %>"> <%= link_to "Home", "/"%> </li>
+				<li class="<%= active_class('/userss') %>"><%= link_to "Users", '/users' %></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<ul class="side-nav" id="mobile-demo">
+				<li class="<%= active_class('/') %>"> <%= link_to "Home", "/"%> </li>
+				<li class="<%= active_class('/users') %>"> <%= link_to "Users", '/users' %></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<div class="container">
+<%= yield %>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">The application tou help you to devellope your skill.<br>
+					Every one Every where you can change your life !. <br>
+					Join Million of users and contribute to developpe this world.
+				</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li class="<%= active_class('/') %>"> <%= link_to "Home", "/", :class=>"grey-text text-lighten-3"%> </li>
+					<li class="<%= active_class('/userss') %>"> <%= link_to "Users", '/users', :class=>"grey-text text-lighten-3" %></li>
+					<li><a href="#" class="grey-text text-lighten-3">About</a></li>
+					<li><a href="#" class="grey-text text-lighten-3">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2016 Copyright Z@ANKY
+    <a class="grey-text text-lighten-4 right" href="#!">Contact</a>
+    </div>
+  </div>
+	</footer>
+
+
+</body>
+</html>

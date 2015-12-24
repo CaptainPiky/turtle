@@ -1,0 +1,47 @@
+
+<div class="row">
+  <h1>Add Users</h1>
+
+  <%= form_for @user, :html => {class: 'col s12'} do |u| %>
+    <div class="row">
+      <div class="input-field col s12 m6">
+        <%= u.label :first_name, "First Name :" %>
+        <p style="color: red"> <%= @user.errors[:title].first %> </p>
+        <%= u.text_field :first_name%>
+      </div>
+      <div class="input-field col s12 m6">
+        <%= u.label :last_name, "Last Name :" %>
+        <p style="color: red"> <%= @user.errors[:title].first %> </p>
+        <%= u.text_field :last_name%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6">
+        <p style="color: red"> <%= @user.errors[:sexe_id].first %> </p>
+        <%= u.select :sexe_id, Sexe.all.collect { |t| [t.title, t.id ] }, {include_blank: true}%>
+        <%= u.label :sexe_id, "Sexe :" %>
+      </div>
+      <div class="input-field col s3 m1">
+        <%= u.label :age, "Age :" %>
+        <p style="color: red"> <%= @user.errors[:title].first %> </p>
+        <%= u.number_field :age%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6">
+        <%= u.label :image, "Image link :" %>
+        <p style="color: red"> <%= @user.errors[:title].first %> </p>
+        <%= u.text_field :image%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6 m6">
+        <%= u.submit 'Add', class: 'btn waves-effect waves-light' %>
+      </div>
+
+      <div class="input-field col s6 m6">
+        <%= link_to "Cancel", '/users', class: "btn waves-effect waves-red red", id:"download-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
